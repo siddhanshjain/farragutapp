@@ -1,7 +1,14 @@
 .App {
+  margin-top: 10px;
   text-align: center;
 }
-
+.buttoncss {
+  background: #da291c;
+  border-radius: 8px;
+  padding: 10px;
+  color: #ffffff;
+  border: none;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
