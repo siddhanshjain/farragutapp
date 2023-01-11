@@ -11,3 +11,50 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.widthWrapper {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  z-index: 9999;
+  background-color: #003a48;
+  opacity: 0.9;
+  height: 10vh;
+}
+.sideWrapper {
+  display: flex;
+  justify-content: right;
+  margin-top: -9vh;
+  position: relative;
+  z-index: 9999;
+}
+.images {
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.resLink {
+  background: url("./image/landingpage.jpg") no-repeat center/cover;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.resLink a {
+  margin-top: 24px;
+}
+.landingpagewrapper {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  max-width: 50px;
+  height: 350px;
+  background-color: #003a48;
+  opacity: 0.9;
+}
+.commoncomponent {
+  display: flex;
+  position: relative;
+  z-index: 9999;
+  background-color: #003a48;
+  opacity: 0.9;
+}
