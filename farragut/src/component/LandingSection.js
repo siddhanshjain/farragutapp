@@ -1,10 +1,11 @@
 import React from "react";
+import ButtonElement from "./ButtonElement";
 
 const LandingSection = () => {
   return (
     <>
       <div className="sideWrapper p-2">
-        <button>Login</button>
+        <ButtonElement name={"Login"} className={"buttoncss"}></ButtonElement>
       </div>
       <div className="container">
         <div className="row justify-content-center mt-5">
