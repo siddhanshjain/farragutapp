@@ -15,7 +15,7 @@ const LandingPageNew = ({ flag, logoflag }) => {
                     <LogoComponent flag={true} logoflag />
                 </div>
                 <div className="col-6 justify-content-end d-flex align-items-center">
-                    <button className="buttoncss">
+                    <button className="buttoncss1">
                         <NavLink
                             to="/login"
                             style={{ textDecoration: "none", color: "white" }}

@@ -5,6 +5,13 @@
 }
 .commoncomponent1 {
 }
+.buttoncss1 {
+  background: #da291c;
+  border-radius: 8px;
+  padding: 5px 45px;
+  color: #ffffff;
+  border: none;
+}
 .logo-style1 {
   height: 38px;
 }
@@ -48,6 +55,10 @@ div.transbox1 h1 {
 
 /* Responsive css */
 @media only screen and (max-width: 600px) {
+  .buttoncss1 {
+    padding: 5px 15px;
+    color: #ffffff;
+  }
   div.transbox1 {
     padding: 15px;
   }

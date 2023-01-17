@@ -10,16 +10,16 @@ const LogoComponent = ({ flag, logoflag }) => {
       <div className="d-inline" style={{ marginLeft: "0.5vw" }}>
         {logoflag && (
           <img
-            src={Logo2}
+            src={aristLogo}
             alt="no-logo found"
-            style={{ height: "18px", marginBottom: "6px" }}
+            style={{ height: "60px" }}
           />
         )}
-        <br />
+        {/* <br />
         <div className="d-flex">
           <img src={Arist_logo} alt="no-logo found" className="logo-style1" />
           <p2 style={{ color: "white" }}>Analytics</p2>
-        </div>
+        </div> */}
       </div>
     </div>
   );
