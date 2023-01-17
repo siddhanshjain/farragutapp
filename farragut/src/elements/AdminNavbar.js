@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { useLocation } from "react-router-dom";
 import { Navbar, Container, Nav, Dropdown, Button } from "react-bootstrap";
 
-import dashboardRoutes from "./routes";
+import { authProtectedRoutes } from "./routes";
 
 function Header() {
   const location = useLocation();
@@ -19,13 +19,13 @@ function Header() {
   };
 
   const getBrandText = () => {
-    for (let i = 0; i < dashboardRoutes.length; i++) {
+    for (let i = 0; i < authProtectedRoutes.length; i++) {
       if (
         location.pathname.indexOf(
-          dashboardRoutes[i].layout + dashboardRoutes[i].path
+          authProtectedRoutes[i].layout + authProtectedRoutes[i].path
         ) !== -1
       ) {
-        return dashboardRoutes[i].name;
+        return authProtectedRoutes[i].name;
       }
     }
     return "Brand";

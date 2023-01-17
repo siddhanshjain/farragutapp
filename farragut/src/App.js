@@ -1,20 +1,52 @@
 import React from "react";
-import Login from "./component/Login";
 import "./App.css";
-import LandingPage from "./component/LandingPage";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Admin from "./elements/Admin";
-import Dashboard from "./component/Dashboard";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { authProtectedRoutes, publicRoutes } from "./elements/routes";
+import Sidebar from "./elements/Sidebars";
 
 function App() {
+  const user = false;
   return (
     <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<LandingPage />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/admin" element={<Admin />} />
-        <Route exact path="/admin/dashboard" element={<Dashboard />} />
-      </Routes>
+      {!user && (
+        <>
+          <Routes>
+            {publicRoutes.map((route, index) => {
+              return (
+                route.path && (
+                  <Route
+                    key={index}
+                    path={route.path}
+                    // exact={route.exact}
+                    element={<route.element />}
+                  />
+                )
+              );
+            })}
+          </Routes>
+        </>
+      )}
+
+      {user && (
+        <>
+          <Sidebar authProtectedRoutes={authProtectedRoutes} />
+          <Navigate from="/" to="/dashboard" />
+          <Routes>
+            {authProtectedRoutes.map((route, index) => {
+              return (
+                route.path && (
+                  <Route
+                    key={index}
+                    path={route.path}
+                    exact={route.exact}
+                    element={<route.element />}
+                  />
+                )
+              );
+            })}
+          </Routes>
+        </>
+      )}
     </BrowserRouter>
   );
 }

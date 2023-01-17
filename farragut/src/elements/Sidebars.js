@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import { useLocation, NavLink } from "react-router-dom";
 
 import { Nav } from "react-bootstrap";
 import LogoComponent from "../component/LogoComponent";
 
-function Sidebar({ dashboardRoutes }) {
+function Sidebar({ authProtectedRoutes }) {
   const location = useLocation();
   const activeRoute = (routeName) => {
     return location.pathname.indexOf(routeName) > -1 ? "active" : "";
@@ -23,7 +23,7 @@ function Sidebar({ dashboardRoutes }) {
           <a className="simple-text">Analytics</a>
         </div>
         <Nav>
-          {dashboardRoutes.map((prop, key) => {
+          {authProtectedRoutes.map((prop, key) => {
             if (!prop.redirect)
               return (
                 <li

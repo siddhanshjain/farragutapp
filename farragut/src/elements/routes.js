@@ -1,48 +1,61 @@
 import Dashboard from "../component/Dashboard";
+import LandingPage from "../component/LandingPage";
+import Login from "../component/Login";
 
-const dashboardRoutes = [
+export const authProtectedRoutes = [
   {
     path: "/dashboard",
     name: "Dashboard",
     icon: "nc-icon nc-chart-pie-35",
-    component: Dashboard,
+    element: Dashboard,
     layout: "/admin",
   },
   {
     path: "/user",
     name: "Users",
     icon: "nc-icon nc-circle-09",
-    component: Dashboard,
+    element: Dashboard,
     layout: "/admin",
   },
   {
     path: "/table",
     name: "Reports",
     icon: "nc-icon nc-notes",
-    component: Dashboard,
+    element: Dashboard,
     layout: "/admin",
   },
   {
     path: "/typography",
     name: "Application",
     icon: "nc-icon nc-paper-2",
-    component: Dashboard,
+    element: Dashboard,
     layout: "/admin",
   },
   {
     path: "/icons",
     name: "Feature Set",
     icon: "nc-icon nc-atom",
-    component: Dashboard,
+    element: Dashboard,
     layout: "/admin",
   },
   {
     path: "/maps",
     name: "Logout",
     icon: "nc-icon nc-pin-3",
-    component: Dashboard,
+    element: Dashboard,
     layout: "/admin",
   },
 ];
 
-export default dashboardRoutes;
+export const publicRoutes = [
+  {
+    path: "/",
+    // name: "LandingPage",
+    element: LandingPage,
+  },
+  {
+    path: "/login",
+    // name: "Login",
+    element: Login,
+  },
+];

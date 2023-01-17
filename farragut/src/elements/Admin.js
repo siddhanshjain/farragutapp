@@ -5,7 +5,8 @@ import AdminNavbar from "./AdminNavbar";
 import Sidebar from "./Sidebars";
 // import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
-import dashboardRoutes from "./routes";
+import { authProtectedRoutes } from "./routes";
+import Dashboard from "../component/Dashboard";
 
 // import sidebarImage from "assets/img/sidebar-3.jpg";
 
@@ -14,8 +15,8 @@ function Admin() {
   const [hasImage, setHasImage] = React.useState(true);
   const location = useLocation();
   const mainPanel = React.useRef(null);
-  const getRoutes = (dashboardRoutes) => {
-    return dashboardRoutes.map((prop, key) => {
+  const getRoutes = (authProtectedRoutes) => {
+    return authProtectedRoutes.map((prop, key) => {
       if (prop.layout === "/admin") {
         return (
           <Route
@@ -45,11 +46,11 @@ function Admin() {
   return (
     <>
       <div className="wrapper">
-        <Sidebar dashboardRoutes={dashboardRoutes} />
+        <Sidebar authProtectedRoutes={authProtectedRoutes} />
         <div className="main-panel" ref={mainPanel}>
           <AdminNavbar />
           <div className="content">
-            <Routes>{getRoutes(dashboardRoutes)}</Routes>
+            <Dashboard />
           </div>
         </div>
       </div>
