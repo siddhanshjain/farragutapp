@@ -1,7 +1,5 @@
 import React from "react";
-import background from "../image/background.png";
-import Arist_logo from "../image/Arist_logo.png";
-import LogoComponent from "./LogoComponent";
+import LogoComponent from "../component/LogoComponent";
 import { NavLink } from "react-router-dom";
 
 function Login() {

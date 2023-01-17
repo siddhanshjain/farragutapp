@@ -1,7 +1,5 @@
 import React from "react";
-import Arist_logo from "../image/Arist_logo.png";
 import aristLogo from "../assets/img/arist-logo-white.png";
-import Logo2 from "../image/Logo2.png";
 
 const LogoComponent = ({ flag, logoflag }) => {
   return (
@@ -9,11 +7,7 @@ const LogoComponent = ({ flag, logoflag }) => {
       {" "}
       <div className="d-inline" style={{ marginLeft: "0.5vw" }}>
         {logoflag && (
-          <img
-            src={aristLogo}
-            alt="no-logo found"
-            style={{ height: "60px" }}
-          />
+          <img src={aristLogo} alt="no-logo found" style={{ height: "60px" }} />
         )}
         {/* <br />
         <div className="d-flex">

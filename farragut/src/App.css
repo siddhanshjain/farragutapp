@@ -3,7 +3,7 @@
       hsl(192, 100%, 14%, 0.8),
       hsl(192, 100%, 14%, 0.8)
     ),
-    url(./image/background.png);
+    url(./assets/img/background.png);
 
   height: calc(100vh - 20px);
   min-width: 60vw;

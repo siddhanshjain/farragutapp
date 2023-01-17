@@ -1,6 +1,6 @@
 import Dashboard from "../component/Dashboard";
-import Login from "../component/Login";
-import LandingPageNew from "../component/LandingPageNew";
+import Login from "../pages/Login";
+import LandingPageNew from "../pages/LandingPageNew";
 
 export const authProtectedRoutes = [
   {

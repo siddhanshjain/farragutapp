@@ -16,7 +16,7 @@
   height: 38px;
 }
 .landingpage-content {
-  background: url("../../image/landingpage.jpg") no-repeat center/cover;
+  background: url("../../assets/img/landingpage.jpg") no-repeat center/cover;
   width: 100%;
   min-height: calc(100vh - 56px);
   padding-top: 70px;
