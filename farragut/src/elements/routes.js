@@ -1,5 +1,4 @@
 import Dashboard from "../component/Dashboard";
-import LandingPage from "../component/LandingPage";
 import Login from "../component/Login";
 import LandingPageNew from "../component/LandingPageNew";
 
@@ -51,11 +50,6 @@ export const authProtectedRoutes = [
 export const publicRoutes = [
   {
     path: "/",
-    // name: "LandingPage",
-    element: LandingPage,
-  },
-  {
-    path: "/new",
     // name: "LandingPage",
     element: LandingPageNew,
   },
