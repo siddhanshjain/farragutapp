@@ -6,7 +6,7 @@ function Login() {
   return (
     <div className="overflow-hidden">
       <div className="row">
-        <div className="hidden-cls col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div className=" col-xs-12 col-sm-6 col-md-6 col-lg-6">
           <div className="custom-pad">
             <div className="Background__Image">
               <div>
@@ -35,7 +35,7 @@ function Login() {
                   placeholder="Enter a Password"
                 />
               </div>
-              <button className="px-5  mt-4 buttoncss">
+              <button className="px-5  mt-4 buttoncss1">
                 <NavLink
                   to="/admin"
                   style={{ textDecoration: "none", color: "white" }}
