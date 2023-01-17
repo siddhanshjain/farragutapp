@@ -15,12 +15,9 @@
   align-items: center;
   justify-content: center;
 }
-.custom-pad {
-  padding: 10px;
-}
-.custom-pad-form {
+/* .custom-pad-form {
   padding: 5rem 10rem 5rem 2rem;
-}
+} */
 .logo-style {
   max-width: 24vw;
   max-height: 5vh;
@@ -40,6 +37,14 @@
 .form-wrapper {
   display: flex;
   height: 100%;
-
+  flex-wrap: wrap;
   align-items: center;
+}
+@media only screen and (max-width: 600px) {
+  .form-wrapper {
+    justify-content: center;
+  }
+  .Background__Image {
+    height: 150px;
+  }
 }

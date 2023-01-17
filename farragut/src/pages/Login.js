@@ -4,10 +4,10 @@ import { NavLink } from "react-router-dom";
 
 function Login() {
   return (
-    <div className="overflow-hidden">
+    <div className="container-fluid">
       <div className="row">
         <div className=" col-xs-12 col-sm-6 col-md-6 col-lg-6">
-          <div className="custom-pad">
+          <div className="">
             <div className="Background__Image">
               <div>
                 <LogoComponent flag={false} logoflag />
@@ -16,9 +16,9 @@ function Login() {
           </div>
         </div>
         <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-          <div className="form-wrapper">
-            <form className="form-inline bg-white custom-pad-form  form-style">
-              <h1>Hello, Sign In</h1>
+          <div className="form-wrapper p-3">
+            <form className="form-inline bg-white custom-pad-form  form-style p-4">
+              <h1 className="mt-0">Hello, Sign In</h1>
               <div className="form-group">
                 <label>Email</label>
                 <input
