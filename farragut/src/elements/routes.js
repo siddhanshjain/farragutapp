@@ -1,49 +1,51 @@
 import Dashboard from "../component/Dashboard";
+import Users from "../component/Users";
 import Login from "../pages/Login";
 import LandingPageNew from "../pages/LandingPageNew";
+import icon1 from "../assets/img/icons/7icon.svg";
+import icon2 from "../assets/img/icons/6icon.svg";
+import icon3 from "../assets/img/icons/5icon.svg";
+import icon4 from "../assets/img/icons/4icon.svg";
+import icon5 from "../assets/img/icons/3icon.svg";
+import icon6 from "../assets/img/icons/2icon.svg";
+import icon7 from "../assets/img/icons/1icon.svg";
 
 export const authProtectedRoutes = [
   {
     path: "/dashboard",
     name: "Dashboard",
-    icon: "nc-icon nc-chart-pie-35",
+    icon: icon1,
     element: Dashboard,
-    layout: "/admin",
   },
   {
-    path: "/user",
+    path: "/users",
     name: "Users",
-    icon: "nc-icon nc-circle-09",
-    element: Dashboard,
-    layout: "/admin",
+    icon: icon2,
+    element: Users,
   },
   {
-    path: "/table",
+    path: "/reports",
     name: "Reports",
-    icon: "nc-icon nc-notes",
+    icon: icon3,
     element: Dashboard,
-    layout: "/admin",
   },
   {
-    path: "/typography",
+    path: "/application",
     name: "Application",
-    icon: "nc-icon nc-paper-2",
+    icon: icon4,
     element: Dashboard,
-    layout: "/admin",
   },
   {
-    path: "/icons",
+    path: "/featureset",
     name: "Feature Set",
-    icon: "nc-icon nc-atom",
+    icon: icon5,
     element: Dashboard,
-    layout: "/admin",
   },
   {
-    path: "/maps",
+    path: "/logout",
     name: "Logout",
-    icon: "nc-icon nc-pin-3",
+    icon: icon6,
     element: Dashboard,
-    layout: "/admin",
   },
 ];
 

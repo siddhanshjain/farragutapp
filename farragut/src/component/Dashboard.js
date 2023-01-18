@@ -17,19 +17,13 @@ function Dashboard() {
                     </div>
                   </Col>
                   <Col xs="7">
-                    <div className="numbers">
-                      {/* <p className="card-category">Number</p>
-                      <Card.Title as="h4">150GB</Card.Title> */}
-                    </div>
+                    <div className="numbers"></div>
                   </Col>
                 </Row>
               </Card.Body>
               <Card.Footer>
                 <hr></hr>
-                <div className="stats">
-                  {/* <i className="fas fa-redo mr-1"></i>
-                  Update Now */}
-                </div>
+                <div className="stats"></div>
               </Card.Footer>
             </Card>
           </Col>
@@ -43,19 +37,13 @@ function Dashboard() {
                     </div>
                   </Col>
                   <Col xs="7">
-                    <div className="numbers">
-                      {/* <p className="card-category">Revenue</p>
-                      <Card.Title as="h4">$ 1,345</Card.Title> */}
-                    </div>
+                    <div className="numbers"></div>
                   </Col>
                 </Row>
               </Card.Body>
               <Card.Footer>
                 <hr></hr>
-                <div className="stats">
-                  {/* <i className="far fa-calendar-alt mr-1"></i>
-                  Last day */}
-                </div>
+                <div className="stats"></div>
               </Card.Footer>
             </Card>
           </Col>
@@ -64,15 +52,10 @@ function Dashboard() {
               <Card.Body>
                 <Row>
                   <Col xs="5">
-                    <div className="icon-big text-center icon-warning">
-                      {/* <i className="nc-icon nc-vector text-danger"></i> */}
-                    </div>
+                    <div className="icon-big text-center icon-warning"></div>
                   </Col>
                   <Col xs="7">
-                    <div className="numbers">
-                      {/* <p className="card-category">Errors</p>
-                      <Card.Title as="h4">23</Card.Title> */}
-                    </div>
+                    <div className="numbers"></div>
                   </Col>
                 </Row>
               </Card.Body>
@@ -90,24 +73,16 @@ function Dashboard() {
               <Card.Body>
                 <Row>
                   <Col xs="5">
-                    <div className="icon-big text-center icon-warning">
-                      {/* <i className="nc-icon nc-favourite-28 text-primary"></i> */}
-                    </div>
+                    <div className="icon-big text-center icon-warning"></div>
                   </Col>
                   <Col xs="7">
-                    <div className="numbers">
-                      {/* <p className="card-category">Followers</p>
-                      <Card.Title as="h4">+45K</Card.Title> */}
-                    </div>
+                    <div className="numbers"></div>
                   </Col>
                 </Row>
               </Card.Body>
               <Card.Footer>
                 <hr></hr>
-                <div className="stats">
-                  {/* <i className="fas fa-redo mr-1"></i>
-                  Update now */}
-                </div>
+                <div className="stats"></div>
               </Card.Footer>
             </Card>
           </Col>

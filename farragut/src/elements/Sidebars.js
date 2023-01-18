@@ -1,58 +1,56 @@
 import React from "react";
-import { useLocation, NavLink } from "react-router-dom";
-
-import { Nav } from "react-bootstrap";
-import LogoComponent from "../component/LogoComponent";
-
-function Sidebar({ authProtectedRoutes }) {
-  const location = useLocation();
-  const activeRoute = (routeName) => {
-    return location.pathname.indexOf(routeName) > -1 ? "active" : "";
-  };
+import { Menu, MenuItem, useProSidebar, Sidebar } from "react-pro-sidebar";
+import iconone from "../assets/img/icons/7icon.svg";
+import icontwo from "../assets/img/icons/6icon.svg";
+import iconthree from "../assets/img/icons/5icon.svg";
+import iconfour from "../assets/img/icons/4icon.svg";
+import iconfive from "../assets/img/icons/3icon.svg";
+import iconsix from "../assets/img/icons/2icon.svg";
+import iconseven from "../assets/img/icons/1icon.svg";
+import Header from "../component/Header";
+import { Link, NavLink, Outlet } from "react-router-dom";
+import AristLogo from "../assets/img/arist-analytics-logo.jpg";
+import { Navbar } from "react-bootstrap";
+function Sidebars({ authProtectedRoutes }) {
+  const { toggleSidebar, broken } = useProSidebar();
+  // const location = useLocation();
+  // const activeRoute = (routeName) => {
+  //   return location.pathname.indexOf(routeName) > -1 ? "active" : "";
+  // };
   return (
-    <div className="sidebar" data-color={"black"}>
-      <div className="sidebar-background" />
-      <div className="sidebar-wrapper">
-        <div className="logo d-flex align-items-center justify-content-start">
-          <a className="simple-text logo-mini mx-1">
-            <div className="logo-img">
-              {/* <img src={require("assets/img/reactlogo.jpg")} alt="..." /> */}
-              <LogoComponent />
-            </div>
-          </a>
-          <a className="simple-text">Analytics</a>
-        </div>
-        <Nav>
-          {authProtectedRoutes.map((prop, key) => {
-            if (!prop.redirect)
-              return (
-                <li
-                  className={
-                    prop.upgrade
-                      ? "active active-pro"
-                      : activeRoute(prop.layout + prop.path)
-                  }
-                  key={key}
-                >
-                  <NavLink
-                    to={prop.layout + prop.path}
-                    className="nav-link"
-                    activeClassName="active"
-                  >
-                    <div className="d-inline-block dividercls" />
-                    <div className="d-sm-inline-block">
-                      <i className={prop.icon} />
-                      <p>{prop.name}</p>
-                    </div>
-                  </NavLink>
-                </li>
-              );
-            return null;
-          })}
-        </Nav>
-      </div>
+    <div className="app-wrapper">
+      <Sidebar collapsedWidth="0px" customBreakPoint="800px">
+        <Navbar.Brand as={Link} to="/dashboard">
+          <img src={AristLogo} alt="logo" className="img-fluid mb-2 mainLogo" />
+        </Navbar.Brand>
+        <Menu>
+          <MenuItem
+            icon={<img src={iconone} />}
+            active={window.location.pathname == "/dashboard"}
+          >
+            <Link to="/dashboard" style={{ textDecoration: "none" }}>
+              {" "}
+              Dashboard
+            </Link>
+          </MenuItem>
+          <MenuItem
+            icon={<img src={icontwo} />}
+            active={window.location.pathname == "/users"}
+          >
+            <Link to="/users" style={{ textDecoration: "none" }}>
+              {" "}
+              Users
+            </Link>
+          </MenuItem>
+          <MenuItem icon={<img src={iconthree} />}> Reports</MenuItem>
+          <MenuItem icon={<img src={iconfour} />}> Application</MenuItem>
+          <MenuItem icon={<img src={iconfive} />}> Feature Set</MenuItem>
+          <MenuItem icon={<img src={iconsix} />}> Data Sync</MenuItem>
+          <MenuItem icon={<img src={iconseven} />}> Logout</MenuItem>
+        </Menu>
+      </Sidebar>
     </div>
   );
 }
 
-export default Sidebar;
+export default Sidebars;
