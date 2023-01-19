@@ -7,20 +7,20 @@ const LandingPageNew = ({ flag, logoflag }) => {
   return (
     <>
       <div className="main-wrapper landing-page">
-        <div className="container-fluid header-wrapper py-3">
-          <div className="row">
+        <div className="container-fluid header-wrapper">
+          <div className="row px-3 h-100">
             <div className="col-6">
               <LogoComponent flag={true} logoflag />
             </div>
             <div className="col-6 justify-content-end d-flex align-items-center">
-              <button className="buttoncss1">
                 <NavLink
                   to="/login"
                   style={{ textDecoration: "none", color: "white" }}
+                  className="buttoncss1"
                 >
                   Login
                 </NavLink>
-              </button>
+
             </div>
           </div>
         </div>

@@ -31,7 +31,28 @@ function App() {
 
       {user && (
         <>
-          <div className="d-flex">
+          <div className="app-wrapper">
+            <Sidebars />
+            <div className='main-wrapper px-3'>
+              <Header header={"Dashboard"} />
+              <div className="main-content">
+                <Routes>
+                  {authProtectedRoutes.map((route, index) => {
+                    return (
+                      route.path && (
+                        <Route
+                          key={index}
+                          path={route.path}
+                          element={<route.element />}
+                        />
+                      )
+                    );
+                  })}
+                </Routes>
+              </div>
+            </div>
+          </div>
+          {/* <div className="d-flex">
             <Sidebars />
 
             <Header header={"Dashboard"} />
@@ -49,7 +70,7 @@ function App() {
                 );
               })}
             </Routes>
-          </div>
+          </div> */}
         </>
       )}
     </BrowserRouter>

@@ -3,11 +3,11 @@ import aristLogo from "../assets/img/arist-logo-white.png";
 
 const LogoComponent = ({ flag, logoflag }) => {
   return (
-    <div className={flag ? "commoncomponent1 p-1" : ""}>
+    <div className={flag ? "commoncomponent1" : ""}>
       {" "}
-      <div className="d-inline" style={{ marginLeft: "0.5vw" }}>
+      <div className="" style={{ paddingTop: "10px" }}>
         {logoflag && (
-          <img src={aristLogo} alt="no-logo found" style={{ height: "60px" }} />
+          <img src={aristLogo} alt="no-logo found" style={{ height: "70px" }} />
         )}
         {/* <br />
         <div className="d-flex">

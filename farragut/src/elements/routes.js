@@ -9,6 +9,7 @@ import icon4 from "../assets/img/icons/4icon.svg";
 import icon5 from "../assets/img/icons/3icon.svg";
 import icon6 from "../assets/img/icons/2icon.svg";
 import icon7 from "../assets/img/icons/1icon.svg";
+import DashboardTest from "../pages/DashboardTest";
 
 export const authProtectedRoutes = [
   {
@@ -59,5 +60,10 @@ export const publicRoutes = [
     path: "/login",
     // name: "Login",
     element: Login,
+  },
+  {
+    path: "/dashboardtest",
+    // name: "Login",
+    element: DashboardTest,
   },
 ];
