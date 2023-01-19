@@ -1,34 +1,122 @@
 import React from "react";
-
+import BootstrapTable from "react-bootstrap-table-next";
 import { Card, Container, Row, Col } from "react-bootstrap";
+import filterFactory, { textFilter } from "react-bootstrap-table2-filter";
 
 function Users() {
+  function priceFormatter(column, colIndex, { sortElement, filterElement }) {
+    return (
+      <div style={{ display: "flex", flexDirection: "column", color: "black" }}>
+        {filterElement}
+        {column.text}
+        {sortElement}
+      </div>
+    );
+  }
+  const columns = [
+    {
+      dataField: "name",
+      text: "Name of report",
+    },
+    {
+      dataField: "date",
+      text: "Created Date",
+      sort: true,
+      headerFormatter: priceFormatter,
+    },
+    {
+      dataField: "user",
+      text: "Customer User",
+    },
+    {
+      dataField: "public",
+      text: "Public User",
+    },
+    {
+      dataField: "description",
+      text: "Description",
+    },
+    {
+      dataField: "action",
+      text: "Actions",
+    },
+  ];
+  const products = [
+    {
+      name: "Report 53464",
+      date: "12/10/2022",
+      user: "Yes",
+      public: "Yes",
+      description:
+        "It is a long established fact that a reader will be distracted...",
+      action: "action",
+    },
+    {
+      name: "Report 53464",
+      date: "11/10/2022",
+      user: "Yes",
+      public: "Yes",
+      description:
+        "It is a long established fact that a reader will be distracted...",
+      action: "action",
+    },
+    {
+      name: "Report 53464",
+      date: "10/10/2022",
+      user: "Yes",
+      public: "Yes",
+      description:
+        "It is a long established fact that a reader will be distracted...",
+      action: "action",
+    },
+    {
+      name: "Report 53464",
+      date: "09/10/2022",
+      user: "Yes",
+      public: "Yes",
+      description:
+        "It is a long established fact that a reader will be distracted...",
+      action: "action",
+    },
+    {
+      name: "Report 53464",
+      date: "09/10/2022",
+      user: "Yes",
+      public: "Yes",
+      description:
+        "It is a long established fact that a reader will be distracted...",
+      action: "action",
+    },
+    {
+      name: "Report 53464",
+      date: "06/10/2022",
+      user: "Yes",
+      public: "Yes",
+      description:
+        "It is a long established fact that a reader will be distracted...",
+      action: "action",
+    },
+    {
+      name: "Report 53464",
+      date: "04/10/2022",
+      user: "Yes",
+      public: "Yes",
+      description:
+        "It is a long established fact that a reader will be distracted...",
+      action: "action",
+    },
+  ];
   return (
     <>
-      <Container fluid>
-        <Row>
-          <Col lg="6" sm="6">
-            <Card className="card-stats">
-              <Card.Body>
-                <Row>
-                  <Col xs="5">
-                    <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-light-3 text-success"></i>
-                    </div>
-                  </Col>
-                  <Col xs="7">
-                    <div className="numbers"></div>
-                  </Col>
-                </Row>
-              </Card.Body>
-              <Card.Footer>
-                <hr></hr>
-                <div className="stats"></div>
-              </Card.Footer>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+      <div className="container-fluid">
+        <BootstrapTable
+          keyField="id"
+          data={products}
+          columns={columns}
+          bordered={false}
+          filter={filterFactory()}
+        />
+      </div>
     </>
   );
 }
