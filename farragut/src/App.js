@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import "./assets/css/common.css"
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { authProtectedRoutes, publicRoutes } from "./elements/routes";
 import Sidebars from "./elements/Sidebars";

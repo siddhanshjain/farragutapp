@@ -1,0 +1,75 @@
+/* Input css */
+input[type="text"],
+input[type="search"],
+input[type="password"] {
+  padding: 11px 70px 11px 15px;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+}
+input:focus {
+  box-shadow: none !important;
+}
+input::placeholder {
+  color: #929eae !important;
+  font-size: 14px;
+}
+/* Common css for all elements */
+.app-wrapper {
+  background-color: #fafafa;
+}
+.shadow-box-wrapper {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 0px 0px 6px 6px;
+  /* height: calc(100vh - 93px); */
+}
+.search-box {
+  position: relative;
+}
+.search-box input[type="search"] {
+  padding-left: 45px;
+}
+.search-box::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-image: url(../img/icons/search-icon.svg);
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+/* Application.css */
+.application-page .application-card {
+  border: 1px solid #f5f5f5;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.application-page .application-card .application-card-content h4 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+}
+.application-page .application-card .application-card-content p {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 19px;
+}
+.application-page .edit-btn {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  color: #da291c;
+  border: 1px solid #e2211c;
+  border-radius: 6px;
+  min-width: 85px;
+  text-align: center;
+}
+.application-page .edit-btn:hover {
+  background-color: #da291c;
+  color: #ffffff;
+  border: 1px solid #e2211c;
+}
+/* Application.css end */
