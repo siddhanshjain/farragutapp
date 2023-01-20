@@ -2,14 +2,16 @@ import React from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import { Card, Container, Row, Col } from "react-bootstrap";
 import filterFactory, { textFilter } from "react-bootstrap-table2-filter";
+import TableIcon from "../assets/img/icons/tableicon.png";
 
-function Users() {
+function Reports() {
   function priceFormatter(column, colIndex, { sortElement, filterElement }) {
     return (
-      <div style={{ display: "flex", flexDirection: "column", color: "black" }}>
+      <div style={{ display: "flex", flexDirection: "column" }}>
         {filterElement}
         {column.text}
         {sortElement}
+        <img src={TableIcon} width={"12px"} height={"12px"} alt={""} />
       </div>
     );
   }
@@ -47,8 +49,7 @@ function Users() {
       date: "12/10/2022",
       user: "Yes",
       public: "Yes",
-      description:
-        "It is a long established fact that a reader will be distracted...",
+      description: "It is a long established fact ..",
       action: "action",
     },
     {
@@ -56,8 +57,7 @@ function Users() {
       date: "11/10/2022",
       user: "Yes",
       public: "Yes",
-      description:
-        "It is a long established fact that a reader will be distracted...",
+      description: "It is a long established fact ..",
       action: "action",
     },
     {
@@ -65,8 +65,7 @@ function Users() {
       date: "10/10/2022",
       user: "Yes",
       public: "Yes",
-      description:
-        "It is a long established fact that a reader will be distracted...",
+      description: "It is a long established fact ..",
       action: "action",
     },
     {
@@ -74,8 +73,7 @@ function Users() {
       date: "09/10/2022",
       user: "Yes",
       public: "Yes",
-      description:
-        "It is a long established fact that a reader will be distracted...",
+      description: "It is a long established fact ..",
       action: "action",
     },
     {
@@ -83,8 +81,7 @@ function Users() {
       date: "09/10/2022",
       user: "Yes",
       public: "Yes",
-      description:
-        "It is a long established fact that a reader will be distracted...",
+      description: "It is a long established fact ..",
       action: "action",
     },
     {
@@ -92,8 +89,7 @@ function Users() {
       date: "06/10/2022",
       user: "Yes",
       public: "Yes",
-      description:
-        "It is a long established fact that a reader will be distracted...",
+      description: "It is a long established fact ..",
       action: "action",
     },
     {
@@ -101,8 +97,39 @@ function Users() {
       date: "04/10/2022",
       user: "Yes",
       public: "Yes",
-      description:
-        "It is a long established fact that a reader will be distracted...",
+      description: "It is a long established fact ..",
+      action: "action",
+    },
+    {
+      name: "Report 53464",
+      date: "04/10/2022",
+      user: "Yes",
+      public: "Yes",
+      description: "It is a long established fact ..",
+      action: "action",
+    },
+    {
+      name: "Report 53464",
+      date: "04/10/2022",
+      user: "Yes",
+      public: "Yes",
+      description: "It is a long established fact ..",
+      action: "action",
+    },
+    {
+      name: "Report 53464",
+      date: "04/10/2022",
+      user: "Yes",
+      public: "Yes",
+      description: "It is a long established fact ..",
+      action: "action",
+    },
+    {
+      name: "Report 53464",
+      date: "04/10/2022",
+      user: "Yes",
+      public: "Yes",
+      description: "It is a long established fact ..",
       action: "action",
     },
   ];
@@ -113,6 +140,7 @@ function Users() {
           keyField="id"
           data={products}
           columns={columns}
+          style={{ fontSize: "8px" }}
           bordered={false}
           filter={filterFactory()}
         />
@@ -121,4 +149,4 @@ function Users() {
   );
 }
 
-export default Users;
+export default Reports;

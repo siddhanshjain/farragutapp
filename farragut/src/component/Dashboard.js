@@ -18,8 +18,13 @@ function Dashboard() {
                     </div>
                     <h3 className="card-title mb-0">Users</h3>
                   </Col>
-                  <Col xs="6" className="texxt-right d-flex align-items-center justify-content-end">
-                    <Link className="view-all">View All</Link>
+                  <Col
+                    xs="6"
+                    className="texxt-right d-flex align-items-center justify-content-end"
+                  >
+                    <Link className="view-all" to="/users">
+                      View All
+                    </Link>
                   </Col>
                 </Row>
               </Card.Header>
@@ -30,14 +35,14 @@ function Dashboard() {
                     <p className="body-title">Customer</p>
                   </Col>
                   <Col className="col-md-1 d-flex algin-items-center">
-                    <div class="vr p-0" style={{height: '115px'}}></div>
+                    <div class="vr p-0" style={{ height: "115px" }}></div>
                   </Col>
                   <Col className="col-md-3">
                     <h3 className="numbers">90</h3>
                     <p className="body-title">Customer Staff</p>
                   </Col>
                   <Col className="col-md-1 d-flex algin-items-center">
-                    <div class="vr p-0" style={{height: '115px'}}></div>
+                    <div class="vr p-0" style={{ height: "115px" }}></div>
                   </Col>
                   <Col className="col-md-3">
                     <h3 className="numbers">08</h3>
@@ -57,8 +62,13 @@ function Dashboard() {
                     </div>
                     <h3 className="card-title mb-0">Report</h3>
                   </Col>
-                  <Col xs="6" className="texxt-right d-flex align-items-center justify-content-end">
-                    <Link className="view-all">View All</Link>
+                  <Col
+                    xs="6"
+                    className="texxt-right d-flex align-items-center justify-content-end"
+                  >
+                    <Link className="view-all" to="/reports">
+                      View All
+                    </Link>
                   </Col>
                 </Row>
               </Card.Header>
@@ -80,9 +90,12 @@ function Dashboard() {
                     <div className="icon-big text-center icon-warning">
                       <i className="nc-icon nc-chart text-warning"></i>
                     </div>
-                    <h3 className="card-title mb-0">Fearure Set</h3>
+                    <h3 className="card-title mb-0">Feature Set</h3>
                   </Col>
-                  <Col xs="6" className="texxt-right d-flex align-items-center justify-content-end">
+                  <Col
+                    xs="6"
+                    className="texxt-right d-flex align-items-center justify-content-end"
+                  >
                     <Link className="view-all">View All</Link>
                   </Col>
                 </Row>
@@ -107,7 +120,10 @@ function Dashboard() {
                     </div>
                     <h3 className="card-title mb-0">Application</h3>
                   </Col>
-                  <Col xs="6" className="texxt-right d-flex align-items-center justify-content-end">
+                  <Col
+                    xs="6"
+                    className="texxt-right d-flex align-items-center justify-content-end"
+                  >
                     <Link className="view-all">View All</Link>
                   </Col>
                 </Row>

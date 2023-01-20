@@ -1,5 +1,5 @@
 import Dashboard from "../component/Dashboard";
-import Users from "../component/Users";
+import Reports from "../component/Reports";
 import Login from "../pages/Login";
 import LandingPageNew from "../pages/LandingPageNew";
 import icon1 from "../assets/img/icons/7icon.svg";
@@ -22,13 +22,13 @@ export const authProtectedRoutes = [
     path: "/users",
     name: "Users",
     icon: icon2,
-    element: Users,
+    element: Reports,
   },
   {
     path: "/reports",
     name: "Reports",
     icon: icon3,
-    element: Dashboard,
+    element: Reports,
   },
   {
     path: "/application",

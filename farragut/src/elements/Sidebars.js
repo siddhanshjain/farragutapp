@@ -1,5 +1,5 @@
 import React from "react";
-import '../assets/css/sidebar.css'
+import "../assets/css/sidebar.css";
 import { Menu, MenuItem, useProSidebar, Sidebar } from "react-pro-sidebar";
 import iconone from "../assets/img/icons/7icon.svg";
 import icontwo from "../assets/img/icons/6icon.svg";
@@ -52,36 +52,45 @@ function Sidebars({ authProtectedRoutes }) {
     //     </Menu>
     //   </Sidebar>
     // </div>
-    <Sidebar className="sidebar-wrapper" customBreakPoint="800px"  collapsedWidth="0px">
-        <Navbar.Brand as={Link} to="/dashboard" className="d-flex justify-content-center align-items-center p-3 border-bottom">
-          <img src={AristLogo} alt="logo" className="img-fluid mainLogo" />
-        </Navbar.Brand>
-        <Menu>
-          <MenuItem
-            icon={<img src={iconone} />}
-            active={window.location.pathname == "/dashboard"}
-          >
-            <Link to="/dashboard" style={{ textDecoration: "none" }}>
-              {" "}
-              Dashboard
-            </Link>
-          </MenuItem>
-          <MenuItem
-            icon={<img src={icontwo} />}
-            active={window.location.pathname == "/users"}
-          >
-            <Link to="/users" style={{ textDecoration: "none" }}>
-              {" "}
-              Users
-            </Link>
-          </MenuItem>
-          <MenuItem icon={<img src={iconthree} />}> Reports</MenuItem>
-          <MenuItem icon={<img src={iconfour} />}> Application</MenuItem>
-          <MenuItem icon={<img src={iconfive} />}> Feature Set</MenuItem>
-          <MenuItem icon={<img src={iconsix} />}> Data Sync</MenuItem>
-          <MenuItem icon={<img src={iconseven} />}> Logout</MenuItem>
-        </Menu>
-      </Sidebar>
+    <Sidebar
+      className="sidebar-wrapper"
+      customBreakPoint="800px"
+      collapsedWidth="0px"
+    >
+      <Navbar.Brand
+        as={Link}
+        to="/dashboard"
+        className="d-flex justify-content-center align-items-center p-3 border-bottom"
+      >
+        <img src={AristLogo} alt="logo" className="img-fluid mainLogo" />
+      </Navbar.Brand>
+      <Menu>
+        <MenuItem
+          icon={<img src={iconone} />}
+          active={window.location.pathname == "/dashboard"}
+        >
+          <Link to="/dashboard" style={{ textDecoration: "none" }}>
+            {" "}
+            Dashboard
+          </Link>
+        </MenuItem>
+        <MenuItem
+          icon={<img src={iconthree} />}
+          active={window.location.pathname == "/users"}
+        >
+          {" "}
+          <Link to="/reports" style={{ textDecoration: "none" }}>
+            Reports
+          </Link>
+        </MenuItem>
+        <MenuItem icon={<img src={iconfour} />}> Application</MenuItem>
+        <MenuItem icon={<img src={iconfive} />}> Feature Set</MenuItem>
+        <MenuItem icon={<img src={icontwo} />}>Users</MenuItem>
+
+        <MenuItem icon={<img src={iconsix} />}> Data Sync</MenuItem>
+        <MenuItem icon={<img src={iconseven} />}> Logout</MenuItem>
+      </Menu>
+    </Sidebar>
   );
 }
 
