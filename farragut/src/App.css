@@ -92,6 +92,17 @@
   flex-wrap: wrap;
   align-items: center;
 }
+#pageDropDown {
+  background-color: transparent;
+  color: #000000;
+  border: 0;
+}
+.application-page .dropdown-toggle::after {
+  color: #da291c;
+}
+.application-page .react-bootstrap-table-pagination-list {
+  display: none;
+}
 /* @media only screen and (max-width: 1320px) {
   .form-style {
     min-width: 571px;
