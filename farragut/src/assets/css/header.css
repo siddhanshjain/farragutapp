@@ -1,0 +1,8 @@
+.user-profile-drodown-header a {
+  padding-left: 8px;
+}
+.user-profile-drodown-header a::after {
+  color: #da291c;
+  position: relative;
+  left: 8px;
+}

@@ -1,0 +1,68 @@
+/* Dashboard */
+.card-stats {
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 16px !important;
+  border: none !important;
+}
+.card-stats .card-title {
+  font-size: 22px;
+}
+.card-stats .view-all {
+  color: #da291c;
+}
+.card-stats .body-title {
+  font-size: 17px;
+  color: #434343;
+}
+.card-stats .numbers {
+  font-size: 60px;
+  font-weight: 700;
+  color: #434343;
+}
+.card-col {
+  margin-bottom: 36px;
+}
+.card-stats .card-header {
+  background-color: #f9f9f9;
+  border-radius: 16px 16px 0px 0px !important;
+}
+
+/* Media Query */
+@media only screen and (max-width: 1120px) {
+  .card-stats .card-title {
+    font-size: 20px;
+  }
+  .card-stats .body-title {
+    font-size: 14px;
+  }
+  .card-stats .numbers {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .header-menu-title {
+    display: flex;
+    align-items: center;
+  }
+  .header-menu-title h2 {
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-left: 8px;
+  }
+  .header-val1 a {
+    font-size: 14px;
+    /* margin-bottom: 0;
+    margin-left: 8px; */
+  }
+}
+@media only screen and (max-width: 768px) {
+  .card-stats .card-title {
+    font-size: 18px;
+  }
+  .card-stats .body-title {
+    font-size: 14px;
+  }
+  .card-stats .numbers {
+    font-size: 32px;
+  }
+}
