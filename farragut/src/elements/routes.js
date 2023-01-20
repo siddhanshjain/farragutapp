@@ -1,5 +1,5 @@
 import Dashboard from "../component/Dashboard";
-import Reports from "../component/Reports";
+import Reports from "../pages/Reports";
 import Login from "../pages/Login";
 import LandingPageNew from "../pages/LandingPageNew";
 import icon1 from "../assets/img/icons/7icon.svg";
@@ -10,6 +10,10 @@ import icon5 from "../assets/img/icons/3icon.svg";
 import icon6 from "../assets/img/icons/2icon.svg";
 import icon7 from "../assets/img/icons/1icon.svg";
 import DashboardTest from "../pages/DashboardTest";
+import Users from "../pages/Users";
+import Application from "../pages/Application";
+import FeatureSet from "../pages/FeatureSet";
+import DataSync from "../pages/DataSync";
 
 export const authProtectedRoutes = [
   {
@@ -22,7 +26,7 @@ export const authProtectedRoutes = [
     path: "/users",
     name: "Users",
     icon: icon2,
-    element: Reports,
+    element: Users,
   },
   {
     path: "/reports",
@@ -34,13 +38,19 @@ export const authProtectedRoutes = [
     path: "/application",
     name: "Application",
     icon: icon4,
-    element: Dashboard,
+    element: Application,
   },
   {
     path: "/featureset",
     name: "Feature Set",
     icon: icon5,
-    element: Dashboard,
+    element: FeatureSet,
+  },
+  {
+    path: "/datasync",
+    name: "Data Sync",
+    icon: icon6,
+    element: DataSync,
   },
   {
     path: "/logout",
