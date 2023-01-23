@@ -14,6 +14,7 @@ input::placeholder {
   color: #929eae !important;
   font-size: 14px;
 }
+/* Button css */
 .buttoncss1 {
   background-color: #da291c;
   border-radius: 8px;
@@ -21,6 +22,42 @@ input::placeholder {
   color: #ffffff;
   border: none;
 }
+.red-btn.btn-danger {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  color: #ffffff;
+  border: 1px solid #e2211c;
+  background-color: #e2211c;
+  border-radius: 10px;
+  min-width: 167px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  text-align: center;
+}
+.red-btn.btn-danger:hover {
+  color: #ffffff;
+  background-color: #e2211c;
+}
+.red-btn-outline.btn-outline-danger {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  color: #e2211c;
+  border: 1px solid #e2211c;
+  background-color: #ffffff;
+  border-radius: 10px;
+  min-width: 167px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  text-align: center;
+}
+.red-btn-outline.btn-outline-danger:hover {
+  color: #e2211c;
+  border: 1px solid #e2211c;
+  background-color: #ffffff;
+}
+/* Button css end */
 /* Model css */
 .model-component-wrapper {
   max-width: 514px;
@@ -98,5 +135,7 @@ input::placeholder {
   background-color: #da291c;
   color: #ffffff;
   border: 1px solid #e2211c;
+}
+.application-form {
 }
 /* Application.css end */

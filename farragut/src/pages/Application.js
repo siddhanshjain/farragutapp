@@ -25,7 +25,7 @@ const Application = () => {
           </form>
         </Col>
         <Col className="col-md-6">
-          <div className="justify-content-end d-flex align-items-center">
+          <div className="justify-content-end d-flex align-items-center application-form">
                 <Button
                   onClick={handleShow}
                   to=""
@@ -57,14 +57,16 @@ const Application = () => {
                           <Form.Label>Large file input example</Form.Label>
                           <Form.Control type="file" size="lg" />
                         </Form.Group>
-                      <Button variant="primary" onHide={() => setShow(false)}>
-                        Cancel
-                      </Button>
-                      <Button variant="primary">
-                        Add
-                      </Button>
                     </Form>
                   </Modal.Body>
+                  <Modal.Footer className="justify-content-start">
+                    <Button variant="outline-danger" className="me-2 red-btn-outline" onHide={() => setShow(false)}>
+                        Cancel
+                      </Button>
+                      <Button variant="danger" className="ms-2 red-btn">
+                        Add
+                      </Button>
+                  </Modal.Footer>
                 </Modal>
                 {/* Model end */}
             </div>
