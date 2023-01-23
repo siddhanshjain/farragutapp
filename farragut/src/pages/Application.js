@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Card, Container, Row, Col } from "react-bootstrap";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
 
 const Application = () => {
+  // const values = [true, 'sm-down', 'md-down', 'lg-down', 'xl-down', 'xxl-down'];
+  const [fullscreen, setFullscreen] = useState(true);
+  const [show, setShow] = useState(false);
+
+  function handleShow(breakpoint) {
+    setFullscreen(breakpoint);
+    setShow(true);
+  }
   return (
     <>
     <Container fluid className="shadow-box-wrapper application-page p-4">
@@ -15,13 +26,47 @@ const Application = () => {
         </Col>
         <Col className="col-md-6">
           <div className="justify-content-end d-flex align-items-center">
-                <NavLink
+                <Button
+                  onClick={handleShow}
                   to=""
-                  style={{ textDecoration: "none", color: "white" }}
                   className="buttoncss1"
                 >
                   Add
-                </NavLink>
+                </Button>
+
+                {/* Model */}
+                <Modal show={show} fullscreen={fullscreen} className="model-component-wrapper" onHide={() => setShow(false)}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Add Application</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <Form>
+                      <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Application Name</Form.Label>
+                        <Form.Control type="text" placeholder="Enter Workspace Id" />
+                        <Form.Text className="text-muted">
+                          We'll never share your email with anyone else.
+                        </Form.Text>
+                      </Form.Group>
+
+                      <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Description</Form.Label>
+                        <Form.Control type="text" placeholder="description" />
+                      </Form.Group>
+                       <Form.Group controlId="formFileLg" className="mb-3">
+                          <Form.Label>Large file input example</Form.Label>
+                          <Form.Control type="file" size="lg" />
+                        </Form.Group>
+                      <Button variant="primary" onHide={() => setShow(false)}>
+                        Cancel
+                      </Button>
+                      <Button variant="primary">
+                        Add
+                      </Button>
+                    </Form>
+                  </Modal.Body>
+                </Modal>
+                {/* Model end */}
             </div>
         </Col>
       </Row>
