@@ -1,13 +1,13 @@
 import React from "react";
 import BootstrapTable from "react-bootstrap-table-next";
-import filterFactory, { textFilter } from "react-bootstrap-table2-filter";
+import filterFactory from "react-bootstrap-table2-filter";
 import TableIcon from "../assets/img/icons/tableicon.png";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import EyeIcon from "../assets/img/icons/eyeicon.svg";
 import DeleteIcon from "../assets/img/icons/deleteicon.svg";
 import FilterIcon from "../assets/img/icons/filtericon.svg";
 import EditIcon from "../assets/img/icons/editicon.svg";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Tabs, Tab } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 function FeatureSet() {
@@ -186,45 +186,53 @@ function FeatureSet() {
 
   return (
     <>
-      <Container fluid className="shadow-box-wrapper application-page p-4">
-        <Row className="d-flex align-items-center mb-3">
-          <Col className="col-md-6">
-            <form class="d-flex search-box">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              {/* <button class="btn btn-outline-success" type="submit">Search</button> */}
-            </form>
-          </Col>
-          <Col className="col-md-6">
-            <div className="justify-content-end d-flex align-items-center">
-              <button type="button" class="btn btn-outline-danger">
-                <img src={FilterIcon} alt="" />
-                Filter
-              </button>
-              <NavLink
-                to=""
-                style={{ textDecoration: "none", color: "white" }}
-                className="buttoncss1"
-              >
-                Add
-              </NavLink>
-            </div>
-          </Col>
-        </Row>
-        <BootstrapTable
-          keyField="id"
-          data={products}
-          columns={columns}
-          style={{ fontSize: "8px" }}
-          bordered={false}
-          filter={filterFactory()}
-          pagination={paginationFactory(options)}
-        />
-      </Container>
+      <Tabs
+        defaultActiveKey="feature"
+        id="uncontrolled-tab-example"
+        className="tabstyle"
+      >
+        <Tab eventKey="feature" title="Feature Set">
+          <Container fluid className="shadow-box-wrapper application-page p-4">
+            <Row className="d-flex align-items-center mb-3">
+              <Col className="col-md-6">
+                <form class="d-flex search-box">
+                  <input
+                    class="form-control me-2"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  {/* <button class="btn btn-outline-success" type="submit">Search</button> */}
+                </form>
+              </Col>
+              <Col className="col-md-6">
+                <div className="justify-content-end d-flex align-items-center">
+                  <button type="button" class="btn btn-outline-danger">
+                    <img src={FilterIcon} alt="" />
+                    Filter
+                  </button>
+                  <NavLink
+                    to=""
+                    style={{ textDecoration: "none", color: "white" }}
+                    className="buttoncss1"
+                  >
+                    Add
+                  </NavLink>
+                </div>
+              </Col>
+            </Row>
+            <BootstrapTable
+              keyField="id"
+              data={products}
+              columns={columns}
+              style={{ fontSize: "8px" }}
+              bordered={false}
+              filter={filterFactory()}
+              pagination={paginationFactory(options)}
+            />
+          </Container>{" "}
+        </Tab>
+      </Tabs>
     </>
   );
 }

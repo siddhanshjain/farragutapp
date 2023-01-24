@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import filterFactory, { textFilter } from "react-bootstrap-table2-filter";
 import TableIcon from "../assets/img/icons/tableicon.png";
@@ -7,8 +7,16 @@ import EyeIcon from "../assets/img/icons/eyeicon.svg";
 import DeleteIcon from "../assets/img/icons/deleteicon.svg";
 import { Container, Row, Col } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import Form from "react-bootstrap/Form";
 
 function Reports() {
+  const [fullscreen, setFullscreen] = useState(true);
+  const [show, setShow] = useState(false);
+  const [fullview, setFullview] = useState(true);
+  const [view, setView] = useState(false);
+
   const products = [
     {
       name: "Report 53464",
@@ -94,7 +102,10 @@ function Reports() {
   function iconFormatter(cell, row) {
     return (
       <span>
-        <button className="btn btn-theme-info btn-sm mb-10">
+        <button
+          className="btn btn-theme-info btn-sm mb-10"
+          onClick={handleView}
+        >
           <img src={EyeIcon} alt="" />
         </button>
         <button className="btn btn-theme-info btn-sm mb-10">
@@ -183,6 +194,14 @@ function Reports() {
       </div>
     );
   }
+  function handleShow(breakpoint) {
+    setFullscreen(breakpoint);
+    setShow(true);
+  }
+  function handleView(breakpoint) {
+    setFullview(breakpoint);
+    setView(true);
+  }
 
   return (
     <>
@@ -202,12 +221,146 @@ function Reports() {
           <Col className="col-md-6">
             <div className="justify-content-end d-flex align-items-center">
               <NavLink
-                to=""
+                onClick={handleShow}
                 style={{ textDecoration: "none", color: "white" }}
                 className="buttoncss1"
               >
                 Add
               </NavLink>
+              {/* Model */}
+              <Modal
+                show={show}
+                fullscreen={fullscreen}
+                className="model-component-wrapper"
+                onHide={() => setShow(false)}
+              >
+                <Modal.Header closeButton>
+                  <Modal.Title>Add Report</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <Form>
+                    <div className="row">
+                      <div className="col-md-6">
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                          <Form.Label>Workspace Id</Form.Label>
+                          <Form.Control
+                            type="text"
+                            placeholder="Enter Workspace Id"
+                          />
+                        </Form.Group>
+                      </div>
+                      <div className="col-md-6">
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                          <Form.Label>Report Id</Form.Label>
+                          <Form.Control
+                            type="text"
+                            placeholder="Enter Report Id"
+                          />
+                        </Form.Group>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-md-6">
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                          <Form.Label>Dataset Id</Form.Label>
+                          <Form.Control
+                            type="text"
+                            placeholder="Enter Dataset Id"
+                          />
+                        </Form.Group>
+                      </div>
+                      <div className="col-md-6">
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                          <Form.Label>Embedded URL</Form.Label>
+                          <Form.Control
+                            type="text"
+                            placeholder="Enter Embedded URL"
+                          />
+                        </Form.Group>
+                      </div>
+                    </div>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                      <Form.Label>Application</Form.Label>
+                      <Form.Control type="text" placeholder="Application" />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                      <Form.Label>Description</Form.Label>
+                      <Form.Control type="text" placeholder="Description" />
+                    </Form.Group>
+                  </Form>
+                </Modal.Body>
+                <Modal.Footer className="justify-content-start">
+                  <Button
+                    variant="outline-danger"
+                    className="me-2 red-btn-outline"
+                    onHide={() => setShow(false)}
+                  >
+                    Cancel
+                  </Button>
+                  <Button variant="danger" className="ms-2 red-btn">
+                    Add
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+              {/* Model end */}
+              {/* Model */}
+              <Modal
+                show={view}
+                fullscreen={fullscreen}
+                className="model-component-wrapper"
+                onHide={() => setView(false)}
+              >
+                <Modal.Header closeButton>
+                  <Modal.Title>View Report</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <Form>
+                    <div className="row">
+                      <div className="col-md-6">
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                          <Form.Label>Name of report</Form.Label>
+                          <br />
+                          <Form.Label>
+                            <b>Report 53464</b>
+                          </Form.Label>
+                        </Form.Group>
+                      </div>
+                      <div className="col-md-6">
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                          <Form.Label>Created Date</Form.Label>
+                          <br />
+                          <Form.Label>
+                            <b>12/05/2022</b>
+                          </Form.Label>
+                        </Form.Group>
+                      </div>
+                    </div>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                      <Form.Label>Description</Form.Label>
+                      <Form.Label>
+                        <b>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout.
+                        </b>
+                      </Form.Label>
+                    </Form.Group>
+                  </Form>
+                </Modal.Body>
+                <Modal.Footer className="justify-content-start">
+                  <Button
+                    variant="outline-danger"
+                    className="me-2 red-btn-outline"
+                    onHide={() => setShow(false)}
+                  >
+                    Cancel
+                  </Button>
+                  <Button variant="danger" className="ms-2 red-btn">
+                    Add
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+              {/* Model end */}
             </div>
           </Col>
         </Row>
