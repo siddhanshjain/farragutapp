@@ -1,7 +1,8 @@
 /* Input css */
 input[type="text"],
 input[type="search"],
-input[type="password"] {
+input[type="password"],
+input[type="file"] {
   padding: 11px 70px 11px 15px;
   background: #ffffff;
   border: 1px solid #dddddd;
@@ -53,15 +54,17 @@ input::placeholder {
   text-align: center;
 }
 .red-btn-outline.btn-outline-danger:hover {
-  color: #e2211c;
+  color: #ffffff;
   border: 1px solid #e2211c;
-  background-color: #ffffff;
+  background-color: #e2211c;
 }
 /* Button css end */
 /* Model css */
 .model-component-wrapper {
   max-width: 514px;
   max-height: 606px;
+  width: 100%;
+  height: auto;
   margin: auto;
   display: block;
   right: 34px;
@@ -138,4 +141,44 @@ input::placeholder {
 }
 .application-form {
 }
+.choose-file {
+  position: relative;
+  border-radius: 10px !important;
+}
+.choose-file::placeholder {
+  content: "Select";
+}
+.choose-file::before {
+  content: "Browse";
+  position: absolute;
+  z-index: 2;
+  display: block;
+  background: #da291c;
+  color: #ffffff;
+  border-radius: 0px 10px 10px 0px;
+  width: 126px;
+  padding: 11px;
+  top: 0;
+  right: 0;
+  text-align: center;
+}
+#formFile::file-selector-button {
+  display: none;
+}
 /* Application.css end */
+
+/* Media Query */
+@media only screen and (max-width: 600px) {
+  .model-component-wrapper {
+    right: 0;
+    left: 0 !important;
+    max-width: 320px;
+  }
+  .model-component-wrapper .red-btn-outline,
+  .model-component-wrapper .red-btn {
+    min-width: 100px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+/*  Media Query End  */

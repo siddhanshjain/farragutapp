@@ -51,11 +51,11 @@ const Application = () => {
 
                       <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Description</Form.Label>
-                        <Form.Control type="text" placeholder="description" />
+                        <Form.Control as="textarea" rows={3} />
                       </Form.Group>
                        <Form.Group controlId="formFileLg" className="mb-3">
-                          <Form.Label>Large file input example</Form.Label>
-                          <Form.Control type="file" size="lg" />
+                          <Form.Label>Upload Logo</Form.Label>
+                          <Form.Control type="file" size="lg" placeholder="Select" className="choose-file" id="formFile" />
                         </Form.Group>
                     </Form>
                   </Modal.Body>
