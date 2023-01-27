@@ -35,6 +35,7 @@ function App() {
           <div className="app-wrapper">
             <Sidebars />
             <div className="main-wrapper px-3">
+              <Header header={"Dashboard"} />
               <div className="main-content">
                 <Routes>
                   {authProtectedRoutes.map((route, index) => {
