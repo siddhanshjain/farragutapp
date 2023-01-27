@@ -9,14 +9,14 @@
 button.buttoncss1 {
   background-color: #da291c;
   border-radius: 8px;
-  padding: 5px 45px;
+  padding: 10.5px 45px;
   color: #ffffff;
   border: none;
 }
 button.buttoncss1:hover,
 button.buttoncss1:focus,
 button.buttoncss1:active {
-  background-color: #da291c !important;
+  background-color: #c12418 !important;
   color: #ffffff;
 }
 /* Bitton css end */

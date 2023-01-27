@@ -19,6 +19,7 @@ import Header from "../component/Header";
 function FeatureSet() {
   const [fullscreen, setFullscreen] = useState(true);
   const [show, setShow] = useState(false);
+  const [deleteModalShow, setDeleteModalShow] = useState(false);
   const products = [
     {
       name: "Feature 53464",
@@ -103,6 +104,9 @@ function FeatureSet() {
     setFullscreen(breakpoint);
     setShow(true);
   }
+  function handleDeleteModalShow(breakpoint) {
+    setDeleteModalShow(true);
+  }
   function iconFormatter(cell, row) {
     return (
       <span>
@@ -112,7 +116,7 @@ function FeatureSet() {
         <button className="btn btn-theme-info btn-sm mb-10">
           <img src={EditIcon} alt="" />
         </button>
-        <button className="btn btn-theme-info btn-sm mb-10">
+        <button onClick={handleDeleteModalShow} className="sdfs btn btn-theme-info btn-sm mb-10">
           <img src={DeleteIcon} alt="" />
         </button>
       </span>
@@ -199,6 +203,30 @@ function FeatureSet() {
   return (
     <>
       <Header header={"Feature Set"} />
+      {/* Delete Model */}
+        <Modal show={deleteModalShow} centered backdropClassName="delete-modal-bg" className="centered-delete-modal" onHide={() => setDeleteModalShow(false)}>
+          <Modal.Header closeButton>
+            <Modal.Title>Add Application</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="body-content text-center">
+              <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M26.2963 21.3954C26.2463 20.2287 26.1463 18.9037 25.9963 17.4204V17.1704H27.0213C27.288 17.1704 27.5796 17.1621 27.8963 17.1454C28.213 17.1287 28.463 17.1037 28.6463 17.0704L28.6963 17.2704C28.663 17.5871 28.6296 17.9037 28.5963 18.2204C28.5796 18.5371 28.5546 18.8621 28.5213 19.1954C28.5046 19.5621 28.4796 19.9287 28.4463 20.2954C28.4296 20.6621 28.413 21.0287 28.3963 21.3954L28.0963 29.1454H26.5713L26.2963 21.3954ZM27.3213 34.8704C26.9046 34.8704 26.5463 34.7204 26.2463 34.4204C25.963 34.1204 25.8213 33.7621 25.8213 33.3454C25.8213 32.9121 25.9713 32.5537 26.2713 32.2704C26.5713 31.9871 26.9213 31.8454 27.3213 31.8454C27.7546 31.8454 28.113 31.9871 28.3963 32.2704C28.6796 32.5537 28.8213 32.9121 28.8213 33.3454C28.8213 33.7621 28.6796 34.1204 28.3963 34.4204C28.113 34.7204 27.7546 34.8704 27.3213 34.8704Z" fill="black"/>
+                <path d="M31.3971 9.75L44.8205 33C46.5526 36 44.3875 39.75 40.9234 39.75H14.0766C10.6125 39.75 8.44744 36 10.1795 33L23.6029 9.75001C25.3349 6.75 29.6651 6.75 31.3971 9.75Z" stroke="#F7BE16" stroke-width="3"/>
+              </svg>
+              <p>Are you sure want to delete the report <span className="bold">Report Name</span>.</p>
+            </div>
+          </Modal.Body>
+          <Modal.Footer className="justify-content-center">
+            <Button variant="outline-danger" className="me-2 red-btn-outline" onClick={() => setDeleteModalShow(false)}>
+                Cancel
+              </Button>
+              <Button variant="danger" className="ms-2 red-btn">
+                Add
+              </Button>
+          </Modal.Footer>
+        </Modal>
+      {/* Delete Model end */}
       <Tabs
         defaultActiveKey="feature"
         id="uncontrolled-tab-example"

@@ -38,7 +38,7 @@ input::placeholder {
 }
 .red-btn.btn-danger:hover {
   color: #ffffff;
-  background-color: #e2211c;
+  background-color: #c12418;
 }
 .red-btn-outline.btn-outline-danger {
   font-weight: 600;
@@ -62,7 +62,7 @@ input::placeholder {
 /* Model css */
 .model-component-wrapper {
   max-width: 514px;
-  max-height: 606px;
+  max-height: 63.1vh;
   width: 100%;
   height: auto;
   margin: auto;
@@ -74,11 +74,46 @@ input::placeholder {
   box-shadow: 0px 4px 27px rgba(7, 48, 68, 0.2);
   border-radius: 6px;
 }
-.modal-backdrop.show {
+.fullscreen-modal-bg.modal-backdrop.show {
   opacity: 0 !important;
 }
 .model-component-wrapper .modal-dialog.modal-fullscreen {
   width: 100%;
+}
+/* Delete Modal */
+.delete-modal-bg.modal-backdrop.show {
+  opacity: 0.8;
+}
+.centered-delete-modal .modal-dialog {
+  border-radius: 10px;
+}
+.centered-delete-modal .modal-header {
+  border-bottom: 1px solid #e7e7e7;
+}
+.centered-delete-modal .modal-title {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+}
+.centered-delete-modal .modal-body {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+.centered-delete-modal .modal-footer {
+  border-top: 1px solid #e7e7e7;
+}
+.centered-delete-modal .modal-footer button {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+}
+.centered-delete-modal {
 }
 /* Model css end */
 /* Common css for all elements */
@@ -162,6 +197,28 @@ input::placeholder {
   right: 0;
   text-align: center;
 }
+.application-img .choose-file-edit {
+  position: relative;
+  width: 200px;
+  background-color: transparent;
+  border: none;
+  color: transparent;
+  height: 54px;
+  padding: 0px;
+  width: 95px;
+}
+.application-img .choose-file-edit::before {
+  content: "Change";
+  /* position: absolute; */
+  z-index: 2;
+  display: block;
+  /* background: #da291c; */
+  color: #da291c;
+  padding: 11px;
+  top: 0;
+  right: 0;
+  text-align: center;
+}
 #formFile::file-selector-button {
   display: none;
 }
@@ -182,3 +239,56 @@ input::placeholder {
   }
 }
 /*  Media Query End  */
+
+/* --------------------------------------------- */
+/* 
+Credit to Eric Porter (http://codepen.io/EricPorter/pen/ObQrza) for the inspiration
+This is my modification where the background stays instead of passes by 
+*/
+
+body {
+  background-color: #0f0f0f;
+  text-align: center;
+  margin: 50vh 0 0 0;
+}
+
+button.left-side {
+  background-color: transparent;
+  color: #da291c;
+  border: 1px solid #da291c;
+  border-radius: 10px;
+  padding: 10px 30px;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+button.left-side > span.bg {
+  background: #da291c;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+
+button.left-side:hover {
+  color: #ffffff;
+}
+
+button.left-side:hover > span.bg {
+  transition: all 0.3s ease-in-out;
+}
+/* left */
+
+button.left-side.left > .bg {
+  left: 0;
+  bottom: 0;
+  transform: translateX(-100%);
+}
+
+button.left-side.left:hover > .bg {
+  transform: translateX(0);
+}
