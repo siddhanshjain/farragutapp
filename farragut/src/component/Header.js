@@ -13,7 +13,7 @@ const Header = ({ header }) => {
   return (
     <div className="container-fluid header-val1 my-3">
       <div className="row d-flex align-items-center">
-        <div className="col-6 header-menu-title">
+        <div className="col-6 header-menu-title mr-5">
           {!broken &&
             /* <button onClick={() => collapseSidebar()} className="btn p-0 btn-toggle">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
