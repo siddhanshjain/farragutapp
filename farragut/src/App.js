@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import "./assets/css/common.css"
+import "./assets/css/common.css";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { authProtectedRoutes, publicRoutes } from "./elements/routes";
 import Sidebars from "./elements/Sidebars";
@@ -34,8 +34,7 @@ function App() {
         <>
           <div className="app-wrapper">
             <Sidebars />
-            <div className='main-wrapper px-3'>
-              <Header header={"Dashboard"} />
+            <div className="main-wrapper px-3">
               <div className="main-content">
                 <Routes>
                   {authProtectedRoutes.map((route, index) => {
@@ -55,7 +54,11 @@ function App() {
           </div>
           {/* <div className="d-flex">
             <Sidebars />
-
+<Route path="/kids">
+            <Header></Header>
+            <Kids></Kids>
+            <Footer></Footer>
+          </Route>
             <Header header={"Dashboard"} />
 
             <Routes>
