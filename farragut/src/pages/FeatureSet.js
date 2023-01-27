@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import filterFactory from "react-bootstrap-table2-filter";
 import TableIcon from "../assets/img/icons/tableicon.png";
@@ -9,8 +9,16 @@ import FilterIcon from "../assets/img/icons/filtericon.svg";
 import EditIcon from "../assets/img/icons/editicon.svg";
 import { Container, Row, Col, Tabs, Tab } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import Form from "react-bootstrap/Form";
+import Select from "react-select";
+import { colourOptions } from "./data.ts";
+import Header from "../component/Header";
 
 function FeatureSet() {
+  const [fullscreen, setFullscreen] = useState(true);
+  const [show, setShow] = useState(false);
   const products = [
     {
       name: "Feature 53464",
@@ -91,6 +99,10 @@ function FeatureSet() {
       action: "action",
     },
   ];
+  function handleShow(breakpoint) {
+    setFullscreen(breakpoint);
+    setShow(true);
+  }
   function iconFormatter(cell, row) {
     return (
       <span>
@@ -186,12 +198,13 @@ function FeatureSet() {
 
   return (
     <>
+      <Header header={"Feature Set"} />
       <Tabs
         defaultActiveKey="feature"
         id="uncontrolled-tab-example"
         className="tabstyle"
       >
-        <Tab eventKey="feature" title="Feature Set">
+        <Tab eventKey="feature" title="FEATURE SET">
           <Container fluid className="shadow-box-wrapper application-page p-4">
             <Row className="d-flex align-items-center mb-3">
               <Col className="col-md-6">
@@ -214,10 +227,71 @@ function FeatureSet() {
                   <NavLink
                     to=""
                     style={{ textDecoration: "none", color: "white" }}
-                    className="buttoncss1"
+                    className="buttoncss1 mx-3"
+                    onClick={handleShow}
                   >
                     Add
                   </NavLink>
+                  {/* Model */}
+                  <Modal
+                    show={show}
+                    fullscreen={fullscreen}
+                    className="model-component-wrapper"
+                    onHide={() => setShow(false)}
+                    backdropClassName="fullscreen-modal-bg"
+                  >
+                    <Modal.Header closeButton>
+                      <Modal.Title>Add Feature Set</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      <Form>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                          <Form.Label>Feature Set Name</Form.Label>
+                          <Form.Control
+                            type="text"
+                            placeholder="Enter Customer Name"
+                          />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                          <Form.Label>Reports</Form.Label>
+                          <Select
+                            defaultValue={[colourOptions[2], colourOptions[3]]}
+                            isMulti
+                            name="colors"
+                            options={colourOptions}
+                            className="basic-multi-select"
+                            classNamePrefix="select"
+                          />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                          <Form.Label>Application</Form.Label>
+                          <Select
+                            defaultValue={[colourOptions[2], colourOptions[3]]}
+                            isMulti
+                            name="colors"
+                            options={colourOptions}
+                            className="basic-multi-select"
+                            classNamePrefix="select"
+                          />
+                        </Form.Group>
+                      </Form>
+                    </Modal.Body>
+                    <Modal.Footer className="justify-content-start">
+                      <Button
+                        variant="outline-danger"
+                        className="me-2 red-btn-outline"
+                        onHide={() => setShow(false)}
+                      >
+                        Cancel
+                      </Button>
+                      <Button variant="danger" className="ms-2 red-btn">
+                        Add
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
+                  {/* Model end */}
                 </div>
               </Col>
             </Row>

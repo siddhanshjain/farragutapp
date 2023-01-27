@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import BootstrapTable from "react-bootstrap-table-next";
-import filterFactory, { textFilter } from "react-bootstrap-table2-filter";
+import filterFactory from "react-bootstrap-table2-filter";
 import TableIcon from "../assets/img/icons/tableicon.png";
 import paginationFactory from "react-bootstrap-table2-paginator";
+import BackIcon from "../assets/img/icons/backicon.svg";
 import EyeIcon from "../assets/img/icons/eyeicon.svg";
 import DeleteIcon from "../assets/img/icons/deleteicon.svg";
 import { Container, Row, Col } from "react-bootstrap";
@@ -10,6 +11,7 @@ import { NavLink } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
+import Header from "../component/Header";
 
 function Reports() {
   const [fullscreen, setFullscreen] = useState(true);
@@ -205,6 +207,7 @@ function Reports() {
 
   return (
     <>
+      <Header header={"Reports"} />
       <Container fluid className="shadow-box-wrapper application-page p-4">
         <Row className="d-flex align-items-center mb-3">
           <Col className="col-md-6">
@@ -233,6 +236,7 @@ function Reports() {
                 fullscreen={fullscreen}
                 className="model-component-wrapper"
                 onHide={() => setShow(false)}
+                backdropClassName="fullscreen-modal-bg"
               >
                 <Modal.Header closeButton>
                   <Modal.Title>Add Report</Modal.Title>
@@ -306,9 +310,10 @@ function Reports() {
               {/* Model */}
               <Modal
                 show={view}
-                fullscreen={fullscreen}
+                fullscreen={fullview}
                 className="model-component-wrapper"
                 onHide={() => setView(false)}
+                backdropClassName="fullscreen-modal-bg"
               >
                 <Modal.Header closeButton>
                   <Modal.Title>View Report</Modal.Title>
@@ -349,14 +354,17 @@ function Reports() {
                 </Modal.Body>
                 <Modal.Footer className="justify-content-start">
                   <Button
-                    variant="outline-danger"
-                    className="me-2 red-btn-outline"
-                    onHide={() => setShow(false)}
+                    variant="danger"
+                    className="ms-2 red-btn"
+                    onClick={() => setView(false)}
                   >
-                    Cancel
-                  </Button>
-                  <Button variant="danger" className="ms-2 red-btn">
-                    Add
+                    <img
+                      src={BackIcon}
+                      alt={""}
+                      height={"15px"}
+                      className="px-3"
+                    />
+                    Back
                   </Button>
                 </Modal.Footer>
               </Modal>
